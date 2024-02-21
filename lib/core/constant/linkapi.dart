@@ -53,5 +53,3 @@ class AppLink {
 
 }
 
-//pass : i)e3EZySSAi(WNwt6pUe
-//dbpass : ARH9DgU]&\6bep0D
