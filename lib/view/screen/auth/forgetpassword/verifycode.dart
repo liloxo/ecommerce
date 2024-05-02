@@ -7,12 +7,11 @@ import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:get/get.dart';
 
 class VerifyCode extends StatelessWidget {
-  const VerifyCode({Key? key}) : super(key: key);
-  
+  const VerifyCode({super.key});
 
   @override
   Widget build(BuildContext context) {
-  VerifyCodeControllerImp controller = Get.put(VerifyCodeControllerImp());
+    VerifyCodeControllerImp controller = Get.put(VerifyCodeControllerImp());
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -26,27 +25,27 @@ class VerifyCode extends StatelessWidget {
       ),
       body: Container(
         padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
-        child: ListView(children:  [
+        child: ListView(children: [
           const SizedBox(height: 20),
           CustomTextTitleAuth(text: "40".tr),
           const SizedBox(height: 10),
           CustomTextBodyAuth(text: "41".tr),
           const SizedBox(height: 20),
           OtpTextField(
-           borderRadius: BorderRadius.circular(15),
-           fieldWidth: 50,
-           numberOfFields: 5,
-           borderColor: AppColor.primaryColor,
-           //set to true to show as box or false to show as dash
-           showFieldAsBox: true, 
-           //runs when a code is typed in
-           onCodeChanged: (String code) {
-               //handle validation or checks here           
-           },
-           //runs when every textfield is filled
-           onSubmit: (String verificationCode){
-            controller.goToResetPassword(verificationCode);
-           }, // end onSubmit
+            borderRadius: BorderRadius.circular(15),
+            fieldWidth: 50,
+            numberOfFields: 5,
+            borderColor: AppColor.primaryColor,
+            //set to true to show as box or false to show as dash
+            showFieldAsBox: true,
+            //runs when a code is typed in
+            onCodeChanged: (String code) {
+              //handle validation or checks here
+            },
+            //runs when every textfield is filled
+            onSubmit: (String verificationCode) {
+              controller.goToResetPassword(verificationCode);
+            }, // end onSubmit
           ),
           const SizedBox(height: 10)
         ]),

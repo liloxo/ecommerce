@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget {
-  final String titleappbar ; 
-  final void Function()? onPressedIconFavorite ; 
-  final void Function()? onPressedSearch ; 
+  final String titleappbar;
+  final void Function()? onPressedIconFavorite;
+  final void Function()? onPressedSearch;
   final TextEditingController? controller;
   final void Function(String)? onChanged;
-  const CustomAppBar({Key? key, required this.titleappbar, this.onPressedSearch, required this.onPressedIconFavorite, this.controller, this.onChanged}) : super(key: key);
+  const CustomAppBar(
+      {super.key,
+      required this.titleappbar,
+      this.onPressedSearch,
+      required this.onPressedIconFavorite,
+      this.controller,
+      this.onChanged});
 
   @override
   Widget build(BuildContext context) {
@@ -15,10 +21,11 @@ class CustomAppBar extends StatelessWidget {
       child: Row(children: [
         Expanded(
             child: TextFormField(
-              onChanged: onChanged,
-              controller: controller,
+          onChanged: onChanged,
+          controller: controller,
           decoration: InputDecoration(
-              prefixIcon: IconButton(icon: const Icon(Icons.search) , onPressed: onPressedSearch),
+              prefixIcon: IconButton(
+                  icon: const Icon(Icons.search), onPressed: onPressedSearch),
               hintText: titleappbar,
               hintStyle: const TextStyle(fontSize: 18),
               border: OutlineInputBorder(
@@ -28,7 +35,7 @@ class CustomAppBar extends StatelessWidget {
               fillColor: Colors.grey[200]),
         )),
         const SizedBox(width: 10),
-        Container(  
+        Container(
           decoration: BoxDecoration(
               color: Colors.grey[200], borderRadius: BorderRadius.circular(10)),
           width: 60,

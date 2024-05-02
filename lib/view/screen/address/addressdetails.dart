@@ -7,7 +7,7 @@ import '../../../core/shared/custombutton.dart';
 import '../../widget/auth/customtextformauth.dart';
 
 class AddressAddDetails extends StatelessWidget {
-  const AddressAddDetails({Key? key}) : super(key: key);
+  const AddressAddDetails({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +43,7 @@ class AddressAddDetails extends StatelessWidget {
                   CustomButton(
                     text: "Add",
                     onPressed: () {
-                      controller.addAddress() ; 
+                      controller.addAddress();
                     },
                   )
                 ])),

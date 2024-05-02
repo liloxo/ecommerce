@@ -7,7 +7,7 @@ import '../../../data/model/ordersmodel.dart';
 
 class CardOrdersList extends GetView<OrdersPendingController> {
   final OrdersModel listdata;
-  const CardOrdersList({Key? key, required this.listdata}) : super(key: key);
+  const CardOrdersList({super.key, required this.listdata});
 
   @override
   Widget build(BuildContext context) {
@@ -59,23 +59,26 @@ class CardOrdersList extends GetView<OrdersPendingController> {
                     child: const Text("Details"),
                   ),
                   const SizedBox(width: 10),
-                 if (listdata.ordersStatus! == "0") MaterialButton(
-                    onPressed: () {
-                      controller.deleteOrder(listdata.ordersId!);
-                    },
-                    color: AppColor.thirdColor,
-                    textColor: AppColor.secoundColor,
-                    child: const Text("Delete"),
-                  ),
-                if (listdata.ordersStatus! == "3") MaterialButton(
-                    onPressed: () {
-                      Get.toNamed('tracking',arguments: {'ordersmodel':listdata});
-                    //  controller.deleteOrder(listdata.ordersId!);
-                    },
-                    color: AppColor.thirdColor,
-                    textColor: AppColor.secoundColor,
-                    child: const Text("Tracking"),
-                  )
+                  if (listdata.ordersStatus! == "0")
+                    MaterialButton(
+                      onPressed: () {
+                        controller.deleteOrder(listdata.ordersId!);
+                      },
+                      color: AppColor.thirdColor,
+                      textColor: AppColor.secoundColor,
+                      child: const Text("Delete"),
+                    ),
+                  if (listdata.ordersStatus! == "3")
+                    MaterialButton(
+                      onPressed: () {
+                        Get.toNamed('tracking',
+                            arguments: {'ordersmodel': listdata});
+                        //  controller.deleteOrder(listdata.ordersId!);
+                      },
+                      color: AppColor.thirdColor,
+                      textColor: AppColor.secoundColor,
+                      child: const Text("Tracking"),
+                    )
                 ],
               ),
             ],

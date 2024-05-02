@@ -8,7 +8,7 @@ import '../widget/cart/customitemscartlist.dart';
 import '../widget/cart/topcardcart.dart';
 
 class Cart extends StatelessWidget {
-  const Cart({Key? key}) : super(key: key);
+  const Cart({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -48,9 +48,9 @@ class Cart extends StatelessWidget {
                                       .add(controller.data[index].itemsId!);
                                   controller.refreshPage();
                                 },
-                                onRemove: () async  {
-                                 await controller.delete(
-                                      controller.data[index].itemsId!);
+                                onRemove: () async {
+                                  await controller
+                                      .delete(controller.data[index].itemsId!);
                                   controller.refreshPage();
                                 },
                                 imagename:
@@ -58,8 +58,7 @@ class Cart extends StatelessWidget {
                                 name: "${controller.data[index].itemsName}",
                                 price:
                                     "${controller.data[index].itemsprice} \$",
-                                count:
-                                    "${controller.data[index].countitems}"),
+                                count: "${controller.data[index].countitems}"),
                           )
                         ],
                       ),

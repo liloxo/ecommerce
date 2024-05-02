@@ -5,11 +5,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class SuccessSignUp extends StatelessWidget {
-  const SuccessSignUp({Key? key}) : super(key: key);
+  const SuccessSignUp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    SuccessSignUpControllerImp controller = Get.put(SuccessSignUpControllerImp());
+    SuccessSignUpControllerImp controller =
+        Get.put(SuccessSignUpControllerImp());
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -42,7 +43,7 @@ class SuccessSignUp extends StatelessWidget {
             child: CustomButtonLang(
                 textbutton: "31".tr,
                 onPressed: () {
-                   controller.goToPageLogin();
+                  controller.goToPageLogin();
                 }),
           ),
           const SizedBox(height: 30)

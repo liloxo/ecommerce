@@ -6,8 +6,7 @@ import 'package:get/get.dart';
 class CustomCardHome extends GetView<HomeControllerImp> {
   final String title;
   final String body;
-  const CustomCardHome({Key? key, required this.title, required this.body})
-      : super(key: key);
+  const CustomCardHome({super.key, required this.title, required this.body});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +29,7 @@ class CustomCardHome extends GetView<HomeControllerImp> {
         Positioned(
           top: -20,
           right: controller.lang == 'en' ? -20 : null,
-          left:  controller.lang == 'ar' ? -20 : null,
+          left: controller.lang == 'ar' ? -20 : null,
           child: Container(
             height: 160,
             width: 160,

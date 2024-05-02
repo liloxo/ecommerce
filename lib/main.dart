@@ -13,22 +13,20 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    LocaleController controller =   Get.put(LocaleController()) ;
+    LocaleController controller = Get.put(LocaleController());
     return GetMaterialApp(
-      translations: MyTranslation(),
-      locale: controller.language,
-      debugShowCheckedModeBanner: false,
-      theme: controller.appTheme,
-      initialRoute: "/",
-      initialBinding: InitialBindings(),
-      //home: const Language(),
-      //routes: routes,
-      getPages: routes
-    );
+        translations: MyTranslation(),
+        locale: controller.language,
+        debugShowCheckedModeBanner: false,
+        theme: controller.appTheme,
+        initialRoute: "/",
+        initialBinding: InitialBindings(),
+        //home: const Language(),
+        //routes: routes,
+        getPages: routes);
   }
 }
-

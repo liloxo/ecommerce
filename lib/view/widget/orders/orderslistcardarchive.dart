@@ -9,8 +9,7 @@ import '../../../data/model/ordersmodel.dart';
 class CardOrdersListArchive extends GetView<OrdersArchiveController> {
   final OrdersModel listdata;
 
-  const CardOrdersListArchive({Key? key, required this.listdata})
-      : super(key: key);
+  const CardOrdersListArchive({super.key, required this.listdata});
 
   @override
   Widget build(BuildContext context) {
@@ -62,14 +61,15 @@ class CardOrdersListArchive extends GetView<OrdersArchiveController> {
                     child: const Text("Details"),
                   ),
                   const SizedBox(width: 10),
-                  if(listdata.ordersRating == '0') MaterialButton(
-                    onPressed: () {
-                      showdialog(context,listdata.ordersId!);
-                    },
-                    color: AppColor.thirdColor,
-                    textColor: AppColor.secoundColor,
-                    child: const Text("Rating"),
-                  )
+                  if (listdata.ordersRating == '0')
+                    MaterialButton(
+                      onPressed: () {
+                        showdialog(context, listdata.ordersId!);
+                      },
+                      color: AppColor.thirdColor,
+                      textColor: AppColor.secoundColor,
+                      child: const Text("Rating"),
+                    )
                 ],
               ),
             ],

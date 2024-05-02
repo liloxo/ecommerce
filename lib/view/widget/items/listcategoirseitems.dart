@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ListCategoriesItems extends GetView<ItemsControllerImp> {
-  const ListCategoriesItems({Key? key}) : super(key: key);
+  const ListCategoriesItems({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,19 +31,20 @@ class ListCategoriesItems extends GetView<ItemsControllerImp> {
 class Categories extends GetView<ItemsControllerImp> {
   final CategoriesModel categoriesModel;
   final int i;
-  const Categories({Key? key, required this.categoriesModel,required this.i}) : super(key: key);
+  const Categories({super.key, required this.categoriesModel, required this.i});
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        controller.changeCat(i,categoriesModel.categoriesId!); 
+        controller.changeCat(i, categoriesModel.categoriesId!);
       },
       child: Column(
         children: [
           GetBuilder<ItemsControllerImp>(
               builder: (controller) => Container(
-                    padding: const EdgeInsets.only(right: 10 , left: 10 , bottom: 5),
+                    padding:
+                        const EdgeInsets.only(right: 10, left: 10, bottom: 5),
                     decoration: controller.selectedcat == i
                         ? const BoxDecoration(
                             border: Border(
@@ -51,7 +52,8 @@ class Categories extends GetView<ItemsControllerImp> {
                                     width: 3, color: AppColor.primaryColor)))
                         : null,
                     child: Text(
-                      translateDatabase(categoriesModel.categoriesNameAr,categoriesModel.categoriesName),
+                      translateDatabase(categoriesModel.categoriesNameAr,
+                          categoriesModel.categoriesName),
                       style:
                           const TextStyle(fontSize: 20, color: AppColor.grey2),
                     ),

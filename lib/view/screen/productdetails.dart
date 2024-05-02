@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../controller/productdetails_controller.dart';
@@ -8,7 +7,7 @@ import '../widget/productdetails/priceandcount.dart';
 import '../widget/productdetails/toppageproductdetails.dart';
 
 class ProductDetails extends StatelessWidget {
-  const ProductDetails({Key? key}) : super(key: key);
+  const ProductDetails({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +56,8 @@ class ProductDetails extends StatelessWidget {
                               onRemove: () {
                                 controller.remove();
                               },
-                              price: "${controller.itemsModel.itemsPriceDiscount}",
+                              price:
+                                  "${controller.itemsModel.itemsPriceDiscount}",
                               count: "${controller.countitems}"),
                           const SizedBox(height: 10),
                           Text("${controller.itemsModel.itemsDesc}",

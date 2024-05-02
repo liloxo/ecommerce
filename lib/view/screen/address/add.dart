@@ -6,7 +6,7 @@ import '../../../core/class/handlingdataview.dart';
 import '../../../core/constant/color.dart';
 
 class AddressAdd extends StatelessWidget {
-  const AddressAdd({Key? key}) : super(key: key);
+  const AddressAdd({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -45,8 +45,8 @@ class AddressAdd extends StatelessWidget {
                           },
                           color: AppColor.primaryColor,
                           textColor: Colors.white,
-                          child:
-                              const Text("اكمال", style: TextStyle(fontSize: 18)),
+                          child: const Text("اكمال",
+                              style: TextStyle(fontSize: 18)),
                         ),
                       )
                     ],

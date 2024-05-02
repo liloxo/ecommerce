@@ -4,14 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class CustomButtonOnBoarding extends GetView<OnBoardingControllerImp> {
-  const CustomButtonOnBoarding({Key? key}) : super(key: key);
+  const CustomButtonOnBoarding({super.key});
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: AppColor.primaryColor,
-        borderRadius: BorderRadius.circular(30)
-      ),
+          color: AppColor.primaryColor,
+          borderRadius: BorderRadius.circular(30)),
       margin: const EdgeInsets.only(bottom: 30),
       height: 40,
       child: MaterialButton(

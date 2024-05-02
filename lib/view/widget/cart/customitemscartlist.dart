@@ -11,14 +11,14 @@ class CustomItemsCartList extends StatelessWidget {
   final void Function()? onAdd;
   final void Function()? onRemove;
   const CustomItemsCartList({
-    Key? key,
+    super.key,
     required this.name,
     required this.price,
     required this.count,
     required this.imagename,
     required this.onAdd,
     required this.onRemove,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -35,15 +35,16 @@ class CustomItemsCartList extends StatelessWidget {
             child: ListTile(
               title: Text(name, style: const TextStyle(fontSize: 15)),
               subtitle: Text(price,
-                  style:
-                      const TextStyle(color: AppColor.primaryColor, fontSize: 17)),
+                  style: const TextStyle(
+                      color: AppColor.primaryColor, fontSize: 17)),
             )),
         Expanded(
             child: Column(
           children: [
             SizedBox(
                 height: 35,
-                child: IconButton(onPressed: onAdd, icon: const Icon(Icons.add))),
+                child:
+                    IconButton(onPressed: onAdd, icon: const Icon(Icons.add))),
             SizedBox(
                 height: 30,
                 child: Text(
@@ -52,7 +53,8 @@ class CustomItemsCartList extends StatelessWidget {
                 )),
             SizedBox(
                 height: 25,
-                child: IconButton(onPressed: onRemove, icon: const Icon(Icons.remove)))
+                child: IconButton(
+                    onPressed: onRemove, icon: const Icon(Icons.remove)))
           ],
         ))
       ]),

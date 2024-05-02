@@ -6,7 +6,7 @@ import '../../../core/class/handlingdataview.dart';
 import '../../../data/model/addressmodel.dart';
 
 class AddressView extends StatelessWidget {
-  const AddressView({Key? key}) : super(key: key);
+  const AddressView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -42,8 +42,7 @@ class AddressView extends StatelessWidget {
 class CardAddress extends StatelessWidget {
   final AddressModel addressModel;
   final void Function()? onDelete;
-  const CardAddress({Key? key, required this.addressModel, this.onDelete})
-      : super(key: key);
+  const CardAddress({super.key, required this.addressModel, this.onDelete});
 
   @override
   Widget build(BuildContext context) {

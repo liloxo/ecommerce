@@ -9,7 +9,7 @@ import '../widget/checkout/cardpaymentmethod.dart';
 import '../widget/checkout/cardshippingaddress.dart';
 
 class Checkout extends StatelessWidget {
-  const Checkout({Key? key}) : super(key: key);
+  const Checkout({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -78,7 +78,8 @@ class Checkout extends StatelessWidget {
                         children: [
                           InkWell(
                             onTap: () {
-                              controller.chooseDeliveryType("0");// 0 => Delivery
+                              controller
+                                  .chooseDeliveryType("0"); // 0 => Delivery
                             },
                             child: CardDeliveryTypeCheckout(
                                 imagename: 'assets/images/deliveryman.png',
@@ -106,22 +107,28 @@ class Checkout extends StatelessWidget {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            if(controller.dataaddress.isNotEmpty) const Text(
-                              "Shipping Address",
-                              style: TextStyle(
-                                  color: AppColor.secoundColor,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 16),
-                            ),
-                            if(controller.dataaddress.isEmpty)
-                            InkWell(
-                              onTap: () {
-                                Get.toNamed('addressadd');
-                              },
-                              child: const Center(
-                                child: Text('Please add shipping address \n Click Here',textAlign: TextAlign.center,style: TextStyle(color: AppColor.primaryColor),),
+                            if (controller.dataaddress.isNotEmpty)
+                              const Text(
+                                "Shipping Address",
+                                style: TextStyle(
+                                    color: AppColor.secoundColor,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 16),
                               ),
-                            ),
+                            if (controller.dataaddress.isEmpty)
+                              InkWell(
+                                onTap: () {
+                                  Get.toNamed('addressadd');
+                                },
+                                child: const Center(
+                                  child: Text(
+                                    'Please add shipping address \n Click Here',
+                                    textAlign: TextAlign.center,
+                                    style:
+                                        TextStyle(color: AppColor.primaryColor),
+                                  ),
+                                ),
+                              ),
                             const SizedBox(height: 10),
                             ...List.generate(
                               controller.dataaddress.length,

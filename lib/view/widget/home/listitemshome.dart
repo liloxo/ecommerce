@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ListItemsHome extends GetView<HomeControllerImp> {
-  const ListItemsHome({Key? key}) : super(key: key);
+  const ListItemsHome({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class ListItemsHome extends GetView<HomeControllerImp> {
 
 class ItemsHome extends GetView<HomeControllerImp> {
   final ItemsModel itemsModel;
-  const ItemsHome({Key? key, required this.itemsModel}) : super(key: key);
+  const ItemsHome({super.key, required this.itemsModel});
 
   @override
   Widget build(BuildContext context) {
@@ -56,9 +56,7 @@ class ItemsHome extends GetView<HomeControllerImp> {
               left: 10,
               child: Text(
                 "${itemsModel.itemsName}",
-                style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 14),
+                style: const TextStyle(color: Colors.white, fontSize: 14),
               ))
         ],
       ),

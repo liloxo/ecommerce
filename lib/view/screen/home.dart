@@ -13,54 +13,57 @@ import '../../core/constant/linkapi.dart';
 import '../../data/model/itemsmodel.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     Get.put(HomeControllerImp());
     return Scaffold(
-      body: GetBuilder<HomeControllerImp>(builder: (controller) =>
-       Container(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
+        body: GetBuilder<HomeControllerImp>(
+      builder: (controller) => Container(
+          padding: const EdgeInsets.symmetric(horizontal: 15),
           child: ListView(
-         children: [
-          CustomAppBar(
-            titleappbar: "Find Product", onPressedIconFavorite: () {Get.toNamed('myfavorite');},controller: controller.search,
-            onPressedSearch: () {
-              controller.onSearchItems();
-            },
-            onChanged: (val) {
-              controller.checkSearch(val);
-            },
-          ),
-          HandlingDataView(
-            statusRequest: controller.statusRequest, 
-            widget: !controller.isSearch
-            ? Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                CustomCardHome(title: controller.titlehomecard, body: controller.bodyhomecard),
-                const CustomTitleHome(title: "Categories"),
-                const ListCategoriesHome(),
-                const CustomTitleHome(title: "Top Selling"),
-                const ListItemsHome(), 
-               /* CustomTitleHome(title: "Offer"),
+            children: [
+              CustomAppBar(
+                titleappbar: "Find Product",
+                onPressedIconFavorite: () {
+                  Get.toNamed('myfavorite');
+                },
+                controller: controller.search,
+                onPressedSearch: () {
+                  controller.onSearchItems();
+                },
+                onChanged: (val) {
+                  controller.checkSearch(val);
+                },
+              ),
+              HandlingDataView(
+                  statusRequest: controller.statusRequest,
+                  widget: !controller.isSearch
+                      ? Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            CustomCardHome(
+                                title: controller.titlehomecard,
+                                body: controller.bodyhomecard),
+                            const CustomTitleHome(title: "Categories"),
+                            const ListCategoriesHome(),
+                            const CustomTitleHome(title: "Top Selling"),
+                            const ListItemsHome(),
+                            /* CustomTitleHome(title: "Offer"),
                 ListItemsHome()*/
-              ],
-            )
-            : ListItemsSearch(listdatamodel: controller.listdata)
-          )
-        ],
-      )),
-      )
-    );
+                          ],
+                        )
+                      : ListItemsSearch(listdatamodel: controller.listdata))
+            ],
+          )),
+    ));
   }
 }
 
 class ListItemsSearch extends GetView<HomeControllerImp> {
   final List<ItemsModel> listdatamodel;
-  const ListItemsSearch({Key? key, required this.listdatamodel})
-      : super(key: key);
+  const ListItemsSearch({super.key, required this.listdatamodel});
 
   @override
   Widget build(BuildContext context) {
